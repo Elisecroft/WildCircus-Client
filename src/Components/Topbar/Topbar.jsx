@@ -13,7 +13,7 @@ const Topbar = () => {
   
   return(
     <nav className="navbar navbar-expand-lg navbar-light custom-navbar">
-    <a class="navbar-brand" href="#">Wild Circus</a>
+    <a class="navbar-brand" href="#"><h1>Wild Circus</h1></a>
     <button className={classTwo} type="button" onClick={toggleNavbar} data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
