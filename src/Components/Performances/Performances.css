@@ -1,0 +1,27 @@
+.card {
+  background: #FFD396 !important;
+  margin: 0 auto;
+  width: 18rem;
+  margin-top: 45px;
+}
+
+.card img {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.card-title {
+  background: #AE2538;
+  color: #FFB64C;
+  font-family: 'Courgette', cursive;
+  letter-spacing: 0.185em;
+  padding: 10px;
+}
+
+.card-body p {
+  font-family: Roboto;
+  color: #AE2538;
+}
+
+

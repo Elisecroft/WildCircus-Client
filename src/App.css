@@ -3,10 +3,13 @@
 .App {
   background-color: #191023;
   min-height: 100vh;
+  color: #FFF;
 }
 
 h2, h3 {
   font-family: 'Courgette', cursive;
+  color: #FFB64C;
+  text-align: center;
 }
 
 .max-width {
@@ -15,4 +18,14 @@ h2, h3 {
 
 .alice-carousel__stage-item {
   max-height: 40vh;
+}
+
+footer {
+  background-color: #E63950;
+  color: #FFB64C;
+}
+
+footer p {
+  margin: 0;
+  padding: 10px;
 }
