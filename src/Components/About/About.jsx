@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div>
       <h2>Welcome to Wild Circus</h2>
-      <p>Lorem ipsum doloret ament</p>
+      <p className="catch-phrase">Lorem ipsum doloret ament</p>
       <Gallery className="max-width" />
       <h3>About Us</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.

@@ -6,6 +6,10 @@
   color: #FFF;
 }
 
+h1 {
+  font-size: 2rem !important;
+}
+
 h2, h3 {
   font-family: 'Courgette', cursive;
   color: #FFB64C;
@@ -13,12 +17,23 @@ h2, h3 {
   margin: 30px !important;
 }
 
+p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.catch-phrase {
+  text-align: center;
+  font-style: italic;
+}
+
 .max-width {
   max-width: 100vw;
 }
 
-.alice-carousel__stage-item {
-  max-height: 40vh;
+.alice-carousel__stage-item __active, .alice-carousel__stage-item {
+  max-width: 100vw !important;
+  height: 500px;
 }
 
 .custom-button {
@@ -31,9 +46,12 @@ h2, h3 {
 footer {
   background-color: #E63950;
   color: #FFB64C;
+  font-weight: 600;
 }
 
 footer p {
   margin: 0;
   padding: 10px;
+  text-align: center;
+  margin: 0 auto;
 }
