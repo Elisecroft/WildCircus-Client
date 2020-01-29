@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Rock+Salt&display=swap');
+
 .custom-navbar {
   background-color: #E63950;
 }
 
-.navbar-light .navbar-nav .nav-link, .navbar-brand {
+.navbar-brand {
   color: #FFB64C !important;
+  font-family: 'Rock Salt', cursive;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #FFB64C !important;
+  font-family: 'Courgette', cursive;
 }
