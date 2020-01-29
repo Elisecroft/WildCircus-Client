@@ -29,7 +29,7 @@ const Performances = () => {
           <img className="card-img-top" src={show.url} alt="Card image cap" />
           <div className="card-body">
             <p className="card-text">{show.places} left - {show.price}$</p>
-            <a href="#" className="btn btn-primary">Reserved</a>
+            <a href="#" className="btn custom-button">Reserved</a>
           </div>
         </div>
       })}
