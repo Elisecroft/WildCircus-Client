@@ -12,7 +12,7 @@ const Topbar = () => {
   };
 
   const logout = () => {
-    const confirm = window.confirm('Etes-vous sur de vouloir vous déconnecter ?');
+    const confirm = window.confirm('Are you sure to disconnect ?');
     if (confirm === true) {
       setUser('');
       localStorage.removeItem('token');

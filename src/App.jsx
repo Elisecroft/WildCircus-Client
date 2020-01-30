@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Sign from './Components/Sign/Sign';
 import Panel from './Components/Panel/Panel';
+import Admin from './Components/Admin/Admin';
 import Footer from './Components/Footer/Footer';
 import Ctx_User from './Ctx_User';
 import './App.css';
@@ -40,6 +41,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path ="/panel" component={Panel} />
+            {user.isAdmin ? <Route exact path ="/admin" component={Admin} /> : null}
             <Redirect to="/panel" />
           </Switch>
         :
