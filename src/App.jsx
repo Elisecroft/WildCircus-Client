@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import TopBar from './Components/Topbar/Topbar';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import Panel from './Components/Panel/Panel';
 import Footer from './Components/Footer/Footer';
 import Ctx_User from './Ctx_User';
 import './App.css';
@@ -34,10 +35,19 @@ const App = () => {
     <div className="App">
       <Ctx_User.Provider value={[user, setUser]} >
         <TopBar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
+        {user.email ?
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path ="/panel" component={Panel} />
+            <Redirect to="/panel" />
+          </Switch>
+        :
+
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path ="/login" component={Login} />
+          </Switch>
+        }
         <Footer />
       </Ctx_User.Provider>
     </div>
