@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import Ctx_User from '../../Ctx_User';
 import './Performances.css';
 
 const Performances = () => {
+
+  const [user, setUser] = useContext(Ctx_User);
 
   // after we gonna retrieve the db infos
   const data = [{
@@ -28,7 +31,7 @@ const Performances = () => {
 
 
   return (
-    <div>
+    <div id="Performances">
       <h3>Performances</h3>
       <div className="container">
           <div className="row">
@@ -36,10 +39,14 @@ const Performances = () => {
         return <div className="col-md-4">
         <div className="card">
           <h5 className="card-title">{show.city} {show.date}</h5>
-          <img className="card-img-top" src={show.url} alt="Card image cap" />
+          <img className="card-img-top" src={show.url} alt="Card" />
           <div className="card-body">
             <p className="card-text">{show.places} left - {show.price}$</p>
-            <a href="#" className="btn custom-button">Reserved</a>
+            {user.email ? 
+              <button type="button" className="btn custom-button">Reserved</button>
+            :
+              <p>You need to be logged to reserved your places</p>
+            }
           </div>
         </div>
         </div>

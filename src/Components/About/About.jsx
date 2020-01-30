@@ -3,7 +3,7 @@ import Gallery from './Gallery/Gallery';
 
 const About = () => {
   return (
-    <div>
+    <div id="About">
       <h2>Welcome to Wild Circus</h2>
       <p className="catch-phrase">Lorem ipsum doloret ament</p>
       <Gallery className="max-width" />

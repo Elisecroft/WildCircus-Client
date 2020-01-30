@@ -29,7 +29,7 @@ const Sign = () => {
         <Link to="/login">Nice, you can now your logging here</Link>
       :
         <>
-          <h3>Sign to make reservation</h3>
+          <h2>Sign to make reservation</h2>
           { error ? <p>Une erreur est survenue, veuillez réessayez</p> : null }
           <div className="form-group">
             <label htmlFor="email">Email address</label>

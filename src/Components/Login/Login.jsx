@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h3>Login to see you reservation and more</h3>
+      <h2>Login to see your reservations and more</h2>
       <div className="form-group">
         <label htmlFor="email">Email address</label>
         <input type="email" className="form-control" id="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />

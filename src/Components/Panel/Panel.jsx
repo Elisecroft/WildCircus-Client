@@ -18,9 +18,9 @@ const Panel = () => {
     <div>
       <h3>Welcome {user.email}</h3>
       { reservations.length > 0 ?
-      <p>Vos reservations</p>
+      <p>Your reservations</p>
         :
-      <p>Vous n'avez aucunes réservations</p>
+      <p>You haven't any reservations yet</p>
       }
     </div>
   )

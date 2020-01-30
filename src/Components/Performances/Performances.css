@@ -3,6 +3,7 @@
   margin: 0 auto;
   width: 18rem;
   margin-top: 45px;
+  border: solid 8px #AE2538 !important;
 }
 
 .card img {
@@ -22,6 +23,7 @@
 .card-body p {
   font-family: Roboto;
   color: #AE2538;
+  font-weight: 600;
 }
 
 
