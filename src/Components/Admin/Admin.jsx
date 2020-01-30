@@ -5,11 +5,11 @@ import './Admin.css';
 const Admin = () => {
   const [data, setData] = useState([]);
   const [form, setForm] = useState({
-    city: null,
-    date: null,
-    price: null,
-    availablePlaces: null,
-    photo: null,
+    city: '',
+    date: '2000-01-01',
+    price: 0,
+    availablePlaces: 0,
+    photo: '',
   });
 
   useEffect(() => {
@@ -31,6 +31,14 @@ const Admin = () => {
       console.log(result);
     });
   };
+
+  const deleteRepresentation = (representation_id, e) => {
+    e.preventDefault();
+    axios.delete(`http://localhost:8000/representations/${representation_id}`)
+      .then((result) => {
+        console.log(result);
+      });
+  }
 
   return (
     <div className="admin">
@@ -58,13 +66,14 @@ const Admin = () => {
       </div>
       <button type="button" onClick={submitForm} className="btn custom-button">Submit</button>
       <h3>All representations</h3>
-      {data.map((show) => {
-          return <div className="col-md-4">
+      {data.map((show, index) => {
+          return <div key={index} className="col-md-4">
             <div className="card">
               <h5 className="card-title">{show.city} {show.date}</h5>
               <img className="card-img-top" src={show.photo ? show.photo : 'https://images.ladepeche.fr/api/v1/images/view/5dad56bf3e4546733061f468/large/image.jpg?v=1'} alt="Card" />
               <div className="card-body">
                 <p className="card-text">{show.places} left - {show.price}$</p>
+                <button type="button" onClick={(e) => deleteRepresentation(show.id, e)} className="btn custom-button">Delete representation</button>
               </div>
             </div>
           </div>

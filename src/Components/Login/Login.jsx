@@ -9,7 +9,7 @@ const Login = () => {
     password: '',
   });
 
-  const [user, setUser] = useContext(Ctx_User);
+  const [setUser] = useContext(Ctx_User);
 
   const submitForm = () => {
     axios.post('http://localhost:8000/login', {

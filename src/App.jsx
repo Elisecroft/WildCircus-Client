@@ -26,7 +26,6 @@ const App = () => {
           console.log(err);
         }
         setUser(res.data);
-        console.log(res.data, 'on app')
       });
     } else {
       setUser({});

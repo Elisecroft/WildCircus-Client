@@ -5,7 +5,7 @@ import './Performances.css';
 
 const Performances = () => {
 
-  const [user, setUser] = useContext(Ctx_User);
+  const [user] = useContext(Ctx_User);
   const [data, setData] = useState([]);
   const [places, setPlaces] = useState(0);
 
@@ -31,8 +31,8 @@ const Performances = () => {
       <h3>Performances</h3>
       <div className="container">
         <div className="row">
-        {data.map((show) => {
-          return <div className="col-md-4">
+        {data.map((show, index) => {
+          return <div key={index} className="col-md-4">
             <div className="card">
               <h5 className="card-title">{show.city} {show.date}</h5>
               <img className="card-img-top" src={show.photo ? show.photo : 'https://images.ladepeche.fr/api/v1/images/view/5dad56bf3e4546733061f468/large/image.jpg?v=1'} alt="Card" />

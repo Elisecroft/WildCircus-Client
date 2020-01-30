@@ -20,8 +20,8 @@ const images = [
 const Gallery = () => (
   <>
     <AliceCarousel  clasName="carrousel" responsive = {{375: { items: 1 }, 1024: { items: 2 }}}>
-      {images.map((image) => {
-        return <img src={image.url} />
+      {images.map((image, index) => {
+        return <img key={index} src={image.url} alt='carrousel' />
       })}
   </AliceCarousel>
   </>

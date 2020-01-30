@@ -3,16 +3,15 @@ import axios from 'axios';
 import Ctx_User from '../../Ctx_User';
 
 const Panel = () => {
-  const [user, setUser] = useContext(Ctx_User);
+  const [user] = useContext(Ctx_User);
   const [reservations, setReservations] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:8000/reservations/${user.id}`)
-    .then((result) => {
-      console.log(result.data);
-      setReservations(result.data);
-    });
-  }, []);
+      .then((result) => {
+        setReservations(result.data);
+      });
+  }, [user.id]);
 
   const cancelReservation = (reservation_id, e) => {
     e.preventDefault();
@@ -27,8 +26,8 @@ const Panel = () => {
       <h3>Welcome {user.email}</h3>
       <h4>Your reservations</h4>
       { reservations.length > 0 ?
-        reservations.map(reservation => {
-          return <div className="col-md-4">
+        reservations.map((reservation, index) => {
+          return <div key={index} className="col-md-4">
             <div className="card">
               <h5 className="card-title">{reservation.city} {reservation.date}</h5>
               <img className="card-img-top" src={reservation.url ? reservation.url : 'https://images.ladepeche.fr/api/v1/images/view/5dad56bf3e4546733061f468/large/image.jpg?v=1'} alt="Card" />
