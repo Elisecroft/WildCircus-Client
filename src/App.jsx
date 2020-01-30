@@ -4,6 +4,7 @@ import axios from 'axios';
 import TopBar from './Components/Topbar/Topbar';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
+import Sign from './Components/Sign/Sign';
 import Panel from './Components/Panel/Panel';
 import Footer from './Components/Footer/Footer';
 import Ctx_User from './Ctx_User';
@@ -46,6 +47,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path ="/login" component={Login} />
+            <Route exact path="/sign" component={Sign} />
           </Switch>
         }
         <Footer />
