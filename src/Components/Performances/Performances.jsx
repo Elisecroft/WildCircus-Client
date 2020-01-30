@@ -37,7 +37,7 @@ const Performances = () => {
               <h5 className="card-title">{show.city} {show.date}</h5>
               <img className="card-img-top" src={show.photo ? show.photo : 'https://images.ladepeche.fr/api/v1/images/view/5dad56bf3e4546733061f468/large/image.jpg?v=1'} alt="Card" />
               <div className="card-body">
-                <p className="card-text">{show.places} left - {show.price}$</p>
+                <p className="card-text">{show.price}$</p>
                 {user.email ? 
                   <>
                     <input type="number" min="1" max="15" onClick={(e) => setPlaces(e.target.value)} />

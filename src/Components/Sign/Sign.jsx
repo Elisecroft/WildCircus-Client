@@ -26,7 +26,10 @@ const Sign = () => {
   return (
     <div className="sign">
       {complete ?
-        <Link to="/login">Nice, you can now your logging here</Link>
+        <>
+          <h2>Sign to make reservation</h2>
+          <Link to="/login">Nice, you can now your logging here</Link>
+        </>
       :
         <>
           <h2>Sign to make reservation</h2>

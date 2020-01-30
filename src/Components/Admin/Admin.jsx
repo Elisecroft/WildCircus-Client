@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Admin.css';
 
@@ -8,7 +9,6 @@ const Admin = () => {
     city: '',
     date: '2000-01-01',
     price: 0,
-    availablePlaces: 0,
     photo: '',
   });
 
@@ -25,7 +25,6 @@ const Admin = () => {
       city: form.city,
       date: form.date,
       price: form.price,
-      availablePlaces: form.availablePlaces,
       photo: form.photo,
     }).then((result) => {
       console.log(result);
@@ -57,10 +56,6 @@ const Admin = () => {
         <input type="float" className="form-control" id="price" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })} required />
       </div>
       <div className="form-group">
-        <label htmlFor="availablePlaces">Availables Places *</label>
-        <input type="number" className="form-control" id="availablePlaces" value={form.availablePlaces} onChange={(e) => setForm({ ...form, availablePlaces: e.target.value })} required />
-      </div>
-      <div className="form-group">
         <label htmlFor="photo">Image photo</label>
         <input type="photo" className="form-control" id="photo" value={form.photo} onChange={(e) => setForm({ ...form, photo: e.target.value })} required />
       </div>
@@ -72,7 +67,14 @@ const Admin = () => {
               <h5 className="card-title">{show.city} {show.date}</h5>
               <img className="card-img-top" src={show.photo ? show.photo : 'https://images.ladepeche.fr/api/v1/images/view/5dad56bf3e4546733061f468/large/image.jpg?v=1'} alt="Card" />
               <div className="card-body">
-                <p className="card-text">{show.places} left - {show.price}$</p>
+                <p className="card-text">{show.price}$</p>
+                <button type="button" className="btn custom-button"><Link to={{ pathname: `/representations/${show.id}`, state: { 
+                  representation_id: show.id,
+                  city: show.city,
+                  date: show.date,
+                  price: show.price,
+                  photo: show.photo,
+              }}}>Update representation</Link></button>
                 <button type="button" onClick={(e) => deleteRepresentation(show.id, e)} className="btn custom-button">Delete representation</button>
               </div>
             </div>
