@@ -28,6 +28,7 @@ const Sign = () => {
       {complete ?
         <>
           <h2>Sign to make reservation</h2>
+          <p>Your account was created</p>
           <Link to="/login">Nice, you can now your logging here</Link>
         </>
       :

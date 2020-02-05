@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Ctx_User from '../../Ctx_User';
 import './Login.css';
 
@@ -9,7 +10,7 @@ const Login = () => {
     password: '',
   });
 
-  const [setUser] = useContext(Ctx_User);
+  const [user, setUser] = useContext(Ctx_User);
 
   const submitForm = () => {
     axios.post('http://localhost:8000/login', {
@@ -23,7 +24,15 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <>
+      {user.email ?
+        <div className="login">
+          <h2>Login to see your reservations and more</h2>
+          <p>Your are logged</p>
+          <Link to="/panel">Check your reservations here</Link>
+        </div>
+      :
+      <div className="login">
       <h2>Login to see your reservations and more</h2>
       <div className="form-group">
         <label htmlFor="email">Email address</label>
@@ -35,6 +44,8 @@ const Login = () => {
       </div>
       <button type="button" onClick={submitForm} className="btn custom-button">Submit</button>
     </div>
+      }
+    </>
   )
 }
 

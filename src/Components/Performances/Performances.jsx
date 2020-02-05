@@ -44,7 +44,12 @@ const Performances = () => {
                     <button type="button" className="btn custom-button" onClick={(e) => reservedPlace(show.id, e)}>Reserved</button>
                   </>
                 :
+                  null
+                }
+                {!user.email ?
                   <p>You need to be logged to reserved your places</p>
+                  :
+                  null              
                 }
               </div>
             </div>

@@ -21,6 +21,10 @@ h2, h3 {
   margin: 30px !important;
 }
 
+h3 {
+  padding-top: 50px;
+}
+
 p {
   width: 80%;
   margin: 0 auto;
@@ -29,6 +33,10 @@ p {
 .catch-phrase {
   text-align: center;
   font-style: italic;
+}
+
+.card {
+  margin-bottom: 45px ! important;
 }
 
 .max-width {
@@ -49,13 +57,17 @@ p {
 
 footer {
   background-color: #E63950;
-  color: #FFB64C;
   font-weight: 600;
 }
 
-footer p {
+footer p, footer a  {
   margin: 0;
   padding: 10px;
+  color: #FFB64C;
   text-align: center;
   margin: 0 auto;
+}
+
+footer a {
+  margin-left: 35%;
 }

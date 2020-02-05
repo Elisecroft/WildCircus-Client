@@ -5,7 +5,7 @@ import './Update.css';
 const Update = ({ location }) => {
   console.log(location)
   const { representation_id, city, date, price, photo } = location.state;
-
+  const [done, setDone] = useState(false);
   const [form, setForm] = useState({
     city: city,
     date: date,
@@ -22,13 +22,15 @@ const Update = ({ location }) => {
       photo: form.photo,
     }).then((result) => {
       console.log(result);
+      setDone(true);
     });
   };
 
   return (
     <div className="update">
       <h2>Administration</h2>
-      <h3>Create Representation</h3>
+      <h3>Update Representation</h3>
+      {done ? <p>Upload done !</p> : null}
       <div className="form-group">
         <label htmlFor="city">City *</label>
         <input type="city" className="form-control" id="city" value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })} required />
